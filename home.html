@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-5 mb-4 bg-primary text-white rounded-3">
+  <h1 class="display-5 fw-bold">PlacementAI</h1>
+  <p class="lead">Upload your resume and let the portal help you prepare for placements.</p>
+
+  {% if 'user' in session %}
+    <p>Hello, <strong>{{ session['user'] }}</strong></p>
+    <a class="btn btn-light" href="{{ url_for('upload') }}">Upload Resume</a>
+  {% else %}
+    <a class="btn btn-light me-2" href="{{ url_for('signup') }}">Sign Up</a>
+    <a class="btn btn-outline-light" href="{{ url_for('login') }}">Login</a>
+  {% endif %}
+</div>
+{% endblock %}

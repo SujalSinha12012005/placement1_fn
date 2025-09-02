@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-4 shadow">
+  <h3 class="mb-3">Upload your Resume (PDF)</h3>
+  <form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input class="form-control" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input class="form-control" name="email" type="email" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Skills (comma separated)</label>
+      <input class="form-control" name="skills" placeholder="e.g. Python,SQL,Flask" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Resume (PDF)</label>
+      <input class="form-control" name="resume" type="file" accept="application/pdf" required>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}
